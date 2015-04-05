@@ -4,6 +4,20 @@
   text-align: center;
 }
 
+.clockStyle {
+  margin-top: -100px;
+  float: right;
+  text-shadow: 1px 1px grey;
+  color: black;
+  padding: 6px;
+  border: #999 2px inset;
+  font-family: "Arial Black";
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  display: inline;
+}
+
 header{
   border-bottom: thin solid #ff0000;
   margin-bottom: 20px;
