@@ -4,16 +4,14 @@
   text-align: center;
 }
 
-}
-
 header{
-    border-bottom: thin solid #ff0000;
-    margin-bottom: 20px;
+  border-bottom: thin solid #ff0000;
+  margin-bottom: 20px;
 }
 
 #logo{
   background-image: url('http://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/BBC_logo_(70s).svg/517px-BBC_logo_(70s).svg.png');
-  background-size: 150px 80px;
+  background-size: 230px 80px;
   background-repeat: no-repeat;
   height: 100px;
   border-bottom: thin solid #D3D3D3;
@@ -23,6 +21,17 @@ header{
   width: 1040px;
   margin: 0px auto;
   min-height: 750px;
+}
+
+li{
+  display: inline-block;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-top: 10px;
 }
 
 #genres li{
@@ -36,7 +45,7 @@ header{
 
 #programmes li {
   width: 43%;
-  height: 280px;
+  height: 300px;
   margin: 10px;
   padding: 10px;
   border-radius: 5px;
@@ -44,14 +53,19 @@ header{
   vertical-align: top;
 }
 
-li{
-  display: inline-block;
+h2{
+  font-family: courier;
 }
 
-ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+#synopsis{
+  font-family: courier;
 }
+
+#time{
+  font-family: courier;
+}
+
+
+
 
 
