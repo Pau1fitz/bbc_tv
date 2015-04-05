@@ -1,7 +1,17 @@
+$(document).ready(function(){
+   getGenres();
+});
 
+$(document).on('click', '#genres li', function(){
+  var genre = $(this).attr('id');
+  getTomorrowsSchedule(genre);
+});
 
 function getGenres (){
-  $.get( "http://www.bbc.co.uk/tv/programmes/genres.json", function( data ) {
+ $.ajax({
+  url: "http://www.bbc.co.uk/tv/programmes/genres.json",
+  dataType: "json"
+  }).done(function(data){
       for (var i = 0; i < data.categories.length; i++) {
       var genres = data.categories[i].title;
       var key = data.categories[i].key;
@@ -10,10 +20,18 @@ function getGenres (){
   });
 };
 
+
 function getTomorrowsSchedule(genre){
-  $.get( "http://www.bbc.co.uk/tv/programmes/genres/" + genre + "/schedules/tomorrow.json", function( data ) {
-    $('#programmes').empty();
-    for (var i = 0; i < data.broadcasts.length; i++) {
+ $.ajax({
+  url: "http://www.bbc.co.uk/tv/programmes/genres/" + genre + "/schedules/tomorrow.json",
+  dataType: "json",
+  beforeSend: function(){
+    $("#programmes").empty();
+    $("#programmes").append("<div id='spinner'><img src='spinner.gif' /></div>");
+  }
+  }).done(function(data){
+    $("#spinner").remove();
+          for (var i = 0; i < data.broadcasts.length; i++) {
       var deets = data.broadcasts[i].programme.display_titles.title;
       var synopsis = data.broadcasts[i].programme.short_synopsis;
       var image = data.broadcasts[i].programme.image.pid;
@@ -24,10 +42,10 @@ function getTomorrowsSchedule(genre){
   });
 };
 
-$(document).ready(function(){
-   getGenres();
-   $(document).on('click', '#genres li', function(){
-    var genre = $(this).attr('id');
-    getTomorrowsSchedule(genre);
-   });
-});
+
+
+
+
+
+
+
