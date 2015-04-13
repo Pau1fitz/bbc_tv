@@ -6,7 +6,6 @@ function renderTime () {
   var m = currentTime.getMinutes();
   var s = currentTime.getSeconds();
 
-
   if(h == 0) {
     h = 12;
   }
@@ -28,10 +27,9 @@ function renderTime () {
     s="0"+s;
   }
 
-
-var myClock = document.getElementById('clockDisplay');
-myClock.innerText = h + ":" + m + ":" + s + ":" +diem;
-  setTimeout ('renderTime()' ,1000)
-}
+  var myClock = document.getElementById('clockDisplay');
+  myClock.innerText = h + ":" + m + ":" + s + ":" +diem;
+    setTimeout ('renderTime()' ,1000)
+  }
 
 renderTime();
